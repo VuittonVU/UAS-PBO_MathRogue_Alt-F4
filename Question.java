@@ -1,0 +1,22 @@
+public class Question {
+    private final String text;
+    private final int answer;
+
+    public Question(String text, int answer) {
+        this.text = text;
+        this.answer = answer;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public int getAnswer() {
+        return answer;
+    }
+
+    @Override
+    public String toString() {
+        return text;
+    }
+}
