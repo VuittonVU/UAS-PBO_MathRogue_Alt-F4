@@ -1,6 +1,7 @@
-CREATE TABLE math_questions (
-    id SERIAL PRIMARY KEY,
-    question_id VARCHAR(20),
-    type VARCHAR(20), -- "red", "blue", etc.
-    template TEXT
+CREATE TABLE "Question" (
+	"question_id"	INTEGER,
+	"color"	TEXT,
+	"question"	TEXT,
+	"difficulty"	TEXT,
+	PRIMARY KEY("question_id")
 );
