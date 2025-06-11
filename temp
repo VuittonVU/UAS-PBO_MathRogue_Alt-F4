@@ -1,0 +1,62 @@
+package game;
+
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import javafx.scene.Parent;
+import javafx.scene.control.Button;
+import javafx.scene.layout.VBox;
+import javafx.fxml.FXMLLoader;
+
+import java.sql.Connection;
+import java.util.List;
+
+public class Main extends Application {
+    private Stage primaryStage;
+
+    @Override
+    public void start(Stage primaryStage) {
+        this.primaryStage = primaryStage;
+
+        // ✅ Connect to database at startup
+        Connection conn = DB.connect();
+        if (conn == null) {
+            System.out.println("⚠️ Warning: Database connection failed. Continuing anyway...");
+        }
+
+        QuestionDAO.initTable();
+        showRoomSelection();
+    }
+
+    public void showRoomSelection() {
+        VBox layout = new VBox(10);
+        layout.setStyle("-fx-padding: 20; -fx-alignment: center;");
+        layout.getChildren().add(new Button("Choose a Room"));
+
+        List<Room> rooms = List.of(
+                new Room("Room 1 - Goblin", EnemyTemplates.goblin()),
+                new Room("Room 2 - Skeleton", EnemyTemplates.skeleton()),
+                new Room("Room 3 - Slime", EnemyTemplates.slime())
+        );
+
+        for (Room room : rooms) {
+            Button btn = new Button(room.getName());
+            btn.setOnAction(e -> showBattleScene(room));
+            layout.getChildren().add(btn);
+        }
+
+        Scene scene = new Scene(layout, 400, 300);
+        primaryStage.setTitle("Math Roguelike - Room Selection");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    public void showBattleScene(Room room) {
+        BattleUI battleUI = new BattleUI(primaryStage, room);
+        battleUI.loadScene();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
