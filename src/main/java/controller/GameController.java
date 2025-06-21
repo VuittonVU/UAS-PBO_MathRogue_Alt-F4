@@ -414,9 +414,9 @@ public class GameController {
         Random rand = new Random();
         EnemyCategory category = EnemyCategory.values()[rand.nextInt(3)];
         if (portalManager.getCurrentRoom() < 6) {
-            return new Enemy(category.toString(), 10 + rand.nextInt(30), 10 + rand.nextInt(10), 2 + rand.nextInt(10), category);
+            return new Enemy(category.toString(), 10 + rand.nextInt(30), 10 + rand.nextInt(10), 2, category);
         } else {
-            return new Enemy(category.toString(), 10 + rand.nextInt(60), 10 + rand.nextInt(20), 2 + rand.nextInt(20), category);
+            return new Enemy(category.toString(), 10 + rand.nextInt(60), 10 + rand.nextInt(20), 2 + rand.nextInt(5), category);
         }
     }
 
