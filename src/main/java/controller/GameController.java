@@ -319,6 +319,8 @@ public class GameController {
     }
 
     private void updateHealthLabels() {
+        String heroStats = hero.showStats();
+
         lblHeroHp.setText("HP: " + hero.getHp());
         lblHeroAttack.setText("Attack: " + hero.getAttackDamage());
 
