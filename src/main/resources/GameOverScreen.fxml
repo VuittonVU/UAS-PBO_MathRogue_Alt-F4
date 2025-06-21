@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EndGameController">
+
+    <!-- Background Image -->
+    <ImageView fx:id="backgroundImage" fitHeight="600" fitWidth="800" pickOnBounds="true" preserveRatio="false">
+        <image>
+            <Image url="@background/Background2.png" />
+        </image>
+    </ImageView>
+
+
+
+    <!-- Semi-transparent overlay -->
+    <Rectangle fill="rgba(0,0,0,0.6)" height="600" width="800" />
+
+    <!-- Game Over Title -->
+    <Label layoutX="150.0" layoutY="105.0" style="-fx-font-size: 60; -fx-text-fill: #ff4444; -fx-font-weight: bold;" text="☠ GAME OVER ☠">
+      <font>
+         <Font size="15.0" />
+      </font></Label>
+
+    <!-- Message -->
+    <Label layoutX="178.0" layoutY="208.0" style="-fx-font-size: 20px; -fx-text-fill: white;" text="Pahlawanmu telah gugur dalam pertempuran.. NT." />
+
+
+    <!-- Retry and Exit Buttons -->
+    <HBox layoutX="250.0" layoutY="336.0" prefHeight="46.0" prefWidth="270.0" spacing="30">
+        <Button fx:id="btnRetry" text="🔁 Coba Lagi" prefWidth="120"
+                onAction="#handleRetry"
+                style="-fx-font-size: 14px; -fx-background-color: #44c767; -fx-text-fill: white;" />
+        <Button fx:id="btnExit" text="❌ Keluar" prefWidth="120"
+                onAction="#handleExit"
+                style="-fx-font-size: 14px; -fx-background-color: #d9534f; -fx-text-fill: white;" />
+    </HBox>
+</AnchorPane>
