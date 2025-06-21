@@ -25,3 +25,7 @@ ___
 2. **Jalankan Aplikasi**
    - Klik kanan Main.java > Run 'Main.main()'
    - Game akan terbuka dan dapat dimainkan
+
+---
+# Link Video Youtube
+.................
