@@ -1,4 +1,0 @@
---patch-module
-mathrogue.mrfx=_
---add-reads
-mathrogue.mrfx=ALL-UNNAMED
