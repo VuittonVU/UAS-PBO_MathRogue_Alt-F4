@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="rootPane" prefHeight="600.0" prefWidth="800.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GameController">
+
+    <!-- Portal Pane (tempat portal akan muncul dinamis lewat controller) -->
+    <Pane fx:id="portalPane" layoutX="0" layoutY="0" prefHeight="100.0" prefWidth="800.0" />
+
+    <!-- Hero Section -->
+    <ImageView fx:id="heroImage" fitHeight="150.0" fitWidth="150.0" layoutX="36.0" layoutY="370.0" preserveRatio="true">
+        <image>
+            <Image url="@assets/Hero.png" />
+        </image>
+    </ImageView>
+
+    <VBox layoutX="151.0" layoutY="363.0" style="-fx-background-color: #000000; -fx-border-color: #F8F8F8; -fx-border-width: 2; -fx-background-radius: 15; -fx-padding: 10px; -fx-border-radius: 15;">
+        <Label fx:id="lblHeroHp" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="HP: 100" textFill="WHITE" />
+        <Label fx:id="lblHeroAttack" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Attack: 10" textFill="WHITE" />
+    </VBox>
+
+    <!-- Enemy Section -->
+    <ImageView fx:id="enemyImage" fitHeight="150.0" fitWidth="150.0" layoutX="120.0" layoutY="170.0" preserveRatio="true" />
+
+    <VBox fx:id="enemyUI" layoutX="289.0" layoutY="156.0" style="-fx-background-color: #000000; -fx-border-color: #F8F8F8; -fx-border-width: 2; -fx-background-radius: 15; -fx-padding: 15px; -fx-border-radius: 15;">
+        <Label fx:id="lblEnemyName" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="💀 Name 💀" textFill="WHITE" />
+        <Label fx:id="lblEnemyHp" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="HP: " textFill="WHITE" />
+        <Label fx:id="lblEnemyAttack" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Attack: " textFill="WHITE" />
+    </VBox>
+
+    <!-- Battle UI -->
+    <VBox fx:id="battleUI" alignment="CENTER" layoutX="289.0" layoutY="272.0" prefHeight="289.0" prefWidth="488.0" spacing="20.0" style="-fx-background-color: #000000; -fx-padding: 15; -fx-background-radius: 15; -fx-border-width: 2; -fx-border-color: #FFFFFF; -fx-border-radius: 15;" AnchorPane.bottomAnchor="39.0" AnchorPane.leftAnchor="289.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="272.0">
+
+        <Label fx:id="questionLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="149.0" prefWidth="556.0" style="-fx-font-size: 14px;" text="🧠 Solve: 2 + 2 = ?" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Label>
+
+        <Label fx:id="resultLabel" style="-fx-font-size: 16px; -fx-text-fill: WHITE;" text="Hasil jawaban..." textFill="#fffbfb" wrapText="true" />
+
+        <HBox alignment="CENTER" spacing="10">
+            <TextField fx:id="answerField" alignment="CENTER" maxWidth="300.0" promptText="Type..." style="-fx-font-size: 12px;-fx-min-width: 60px; -fx-max-width: 120px;                               -fx-min-height: 45px; -fx-max-height: 80px; -fx-border-color: #000000; -fx-border-width: 1px;" />
+
+            <Button fx:id="submitButton" alignment="CENTER" style="-fx-font-size: 12px; -fx-min-height: 30px; -fx-max-height: 50px; -fx-max-width: 80px; -fx-min-width: 30px;" text="Submit" />
+        </HBox>
+    </VBox>
+
+    <!-- Timer -->
+    <Label fx:id="timerLabel" layoutX="650.0" layoutY="20.0" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Time left: 60" textFill="RED" />
+
+    <VBox fx:id="roomUI" alignment="CENTER" layoutX="621.0" layoutY="106.0" prefHeight="50.0" prefWidth="93.0" style="-fx-background-color: #000000; -fx-border-color: #F8F8F8; -fx-border-width: 2; -fx-background-radius: 15; -fx-padding: 12px; -fx-border-radius: 15;">
+      <children>
+           <Label fx:id="lblRoom" alignment="CENTER" contentDisplay="CENTER" prefHeight="22.0" prefWidth="63.0" style="-fx-font-size: 16px; -fx-font-weight: bold;" text=" Room " textAlignment="CENTER" textFill="WHITE" />
+      </children>
+    </VBox>
+    <Button fx:id="btnStats" layoutX="721.0" layoutY="112.0" onAction="#showHeroStats" prefHeight="38.0" prefWidth="55.0" text="Stats" />
+
+</AnchorPane>
