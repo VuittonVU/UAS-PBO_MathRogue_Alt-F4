@@ -16,7 +16,7 @@ ___
 
 ### Langkah Instalasi dan Menjalankan Aplikasi
 1. **Setup Intelij IDEA**
-   - Ekstrak dan Buka Proyek
+   - Download File di Github dan Kumpulkan ke floder bernama "MR-FX"
    - Lalu buka folder MR-FX di IntelliJ IDEA (File > Open).
    - Pastikan SDK adalah JDK 24
    - File > Project Structure > Project
