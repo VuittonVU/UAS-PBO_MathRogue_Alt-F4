@@ -24,8 +24,8 @@ public class Hero extends Stats {
     }
 
     @Override
-    public void showStats() {
-        System.out.printf("🧝 Hero: %s | HP: %d | ATK: %d | DEF: %d\n",
+    public String showStats() {
+        return String.format("🧝 Hero: %s | HP: %d | ATK: %d | DEF: %d",
                 getName(), getHp(), getAttackDamage(), getDefense());
     }
 
